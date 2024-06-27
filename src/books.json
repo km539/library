@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Fiction",
+    "description": "A novel about the serious issues of rape and racial inequality.",
+    "publishedDate": "1960"
+  },
+  {
+    "id": "2",
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "description": "A novel that explores the dangers of totalitarianism.",
+    "publishedDate": "1949"
+  },
+  {
+    "id": "3",
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "genre": "Adventure",
+    "description": "The narrative of Captain Ahab's obsessive quest to kill Moby Dick.",
+    "publishedDate": "1851"
+  },
+  {
+    "id": "100",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Tragedy",
+    "description": "A novel that explores themes of wealth, love, and the American Dream.",
+    "publishedDate": "1925"
+  }
+]
