@@ -24,6 +24,15 @@
     "publishedDate": "1851"
   },
   {
+    "id": "4",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "description": "A classic novel about manners, marriage, and social standing.",
+    "publishedDate": "1813",
+    "status": "available"
+  },
+  {
     "id": "100",
     "title": "The Great Gatsby",
     "author": "F. Scott Fitzgerald",
