@@ -1,0 +1,20 @@
+ul {
+  list-style-type: none;
+  /* display: flex;
+  gap: 24px; */
+  display: inline-block;
+}
+
+li {
+  padding: 24px 36px;
+}
+
+li a {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 10px;
+}
