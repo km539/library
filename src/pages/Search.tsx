@@ -22,7 +22,7 @@ function Search() {
             <input type="text" name="title" />
             <label htmlFor="author">著者</label>
             <input type="text" name="author" />
-            <label htmlFor="publishedDate">発行</label>
+            <label htmlFor="publishedDate">発行日</label>
             <input type="text" name="publishedDate" />
             <button>検索</button>
             <button>クリア</button>
