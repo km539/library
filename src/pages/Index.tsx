@@ -1,9 +1,11 @@
 import React from "react";
 import "../styles/Index.css";
+import Header from "../components/Header.tsx";
 
 function Index() {
   return (
     <>
+      <Header />
       <h1>目次</h1>
       <ul>
         <li>
