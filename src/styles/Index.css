@@ -15,18 +15,18 @@ ul {
   gap: 10px;
 }
 
-li {
+.menuList {
   width: 150px;
   height: 150px;
   border: 2px solid blue;
   border-radius: 10px;
 }
 
-li:hover {
+.menuList:hover {
   background-color: aliceblue;
 }
 
-li a {
+.menuList a {
   color: black;
   text-align: center;
   text-decoration: none;
@@ -39,7 +39,7 @@ li a {
   height: 100%;
 }
 
-li a svg {
+.menuList a svg {
   width: 60%;
   height: 60%;
 }

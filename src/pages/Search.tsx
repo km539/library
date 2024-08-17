@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../components/Header.tsx";
 
 function Search() {
   const submitAction = e => {
@@ -14,10 +15,11 @@ function Search() {
 
   return (
     <>
-      <h2 className="title">検索フォーム</h2>
-      <div>
+      <Header />
+      <div style={{ height: "100dvh", marginTop: "1rem" }}>
+        <h2 className="title">検索フォーム</h2>
         <form action="" onSubmit={submitAction}>
-          <div className="container">
+          <div style={{ padding: "10px 16px" }}>
             <label htmlFor="title">タイトル</label>
             <input type="text" name="title" />
             <label htmlFor="author">著者</label>

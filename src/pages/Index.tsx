@@ -12,38 +12,38 @@ function Index() {
       <div className="box">
         <h1>目次</h1>
         <ul>
-          <li>
+          <li className="menuList">
             <a href="/search">
               <FaSearch />
               <p>資料検索</p>
             </a>
           </li>
-          <li>
+          <li className="menuList">
             <a href="/books">
               <MdOutlineFiberNew />
               <p>新着案内</p>
             </a>
           </li>
-          <li>
+          <li className="menuList">
             <a href="/books">
               <FaRegStar />
               <p>貸出ベスト</p>
             </a>
           </li>
-          <li>
+          <li className="menuList">
             <a href="/books">
               <FaRegUser />
               <p>ユーザー</p>
             </a>
           </li>
-          <li>
-            <a href="/books">
+          <li className="menuList">
+            <a href="/add">
               <FaPlus />
               <p>本の追加</p>
             </a>
           </li>
-          <li>
-            <a href="/books">
+          <li className="menuList">
+            <a href="/news">
               <HiOutlineBellAlert />
               <p>通知内容</p>
             </a>
