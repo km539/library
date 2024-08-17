@@ -10,7 +10,7 @@ function Header() {
       </div>
 
       <nav>
-        <div className="bar" onClick={() => setBar(!bar)}>
+        {/* <div className="bar" onClick={() => setBar(!bar)}>
           =
         </div>
         <ul className={bar ? "on" : "off"}>
@@ -19,7 +19,7 @@ function Header() {
               Login
             </a>
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </div>
   );

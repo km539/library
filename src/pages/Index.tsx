@@ -1,26 +1,55 @@
 import React from "react";
 import "../styles/Index.css";
 import Header from "../components/Header.tsx";
+import { FaSearch, FaRegUser, FaRegStar, FaPlus } from "react-icons/fa";
+import { MdOutlineFiberNew } from "react-icons/md";
+import { HiOutlineBellAlert } from "react-icons/hi2";
 
 function Index() {
   return (
     <>
       <Header />
-      <h1>目次</h1>
-      <ul>
-        <li>
-          <a href="/search">資料検索</a>
-          資料を探す
-        </li>
-        <li>
-          <a href="/books">新着案内</a>
-          新しく入った資料を見る
-        </li>
-        <li>
-          <a href="/books">貸出ベスト</a>
-          貸し出しの多い資料を見る
-        </li>
-      </ul>
+      <div className="box">
+        <h1>目次</h1>
+        <ul>
+          <li>
+            <a href="/search">
+              <FaSearch />
+              <p>資料検索</p>
+            </a>
+          </li>
+          <li>
+            <a href="/books">
+              <MdOutlineFiberNew />
+              <p>新着案内</p>
+            </a>
+          </li>
+          <li>
+            <a href="/books">
+              <FaRegStar />
+              <p>貸出ベスト</p>
+            </a>
+          </li>
+          <li>
+            <a href="/books">
+              <FaRegUser />
+              <p>ユーザー</p>
+            </a>
+          </li>
+          <li>
+            <a href="/books">
+              <FaPlus />
+              <p>本の追加</p>
+            </a>
+          </li>
+          <li>
+            <a href="/books">
+              <HiOutlineBellAlert />
+              <p>通知内容</p>
+            </a>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }
