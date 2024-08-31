@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  node:
+    env_file:
+      - ./node/.env
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    container_name: express
+    volumes:
+      - ./node:/usr/src/app
+    tty: true
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgres"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./node/DB:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
