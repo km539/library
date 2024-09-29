@@ -13,6 +13,7 @@ type bookType = {
 
 function BooksList() {
   const [books, setBooks] = useState<bookType[]>([]);
+  const [selectedBook, setSelectedBook] = useState<bookType | null>(null);
 
   const getBooks = async () => {
     const res = await fetch("http://localhost:5000/api/books");
@@ -41,7 +42,7 @@ function BooksList() {
         <p>
           <strong>Published Date:</strong> {book.published_date}
         </p>
-        <button>Close</button>
+        <button onClick={() => setSelectedBook(null)}>Close</button>
       </div>
     </div>
   );
@@ -63,7 +64,8 @@ function BooksList() {
         </thead>
         <tbody>
           {books.map((book) => (
-            <tr key={book.id} onClick={() => viewDetail(book)}>
+            // <tr key={book.id} onClick={() => viewDetail(book)}>
+            <tr key={book.id} onClick={() => setSelectedBook(book)}>
               <td>{book.id}</td>
               <td>{book.title}</td>
               <td>{book.author}</td>
@@ -74,6 +76,7 @@ function BooksList() {
             </tr>
           ))}
         </tbody>
+        {selectedBook && viewDetail(selectedBook)}
       </table>
     </div>
   );
