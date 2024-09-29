@@ -3,7 +3,6 @@ import { pool } from "../DB/initDB";
 
 const router = Express.Router();
 
-// GET API: Get all books
 router.get("/", async (req, res) => {
   try {
     const books = await pool.select("*").from("books");
@@ -13,16 +12,25 @@ router.get("/", async (req, res) => {
   }
 });
 
-// POST API: Add a new book
 router.post("/", async (req, res) => {
-  const { title, author, genre, description, publishedDate } = req.body;
+  // const { title, author, genre, description, publishedDate } = req.body;
+  // try {
+  //   const newBook = await pool("books")
+  //     .insert({
+  //       title,
+  //       author,
+  //       genre,
+  //       description,
+  //       published_date: publishedDate,
+  //     })
+  //     .returning("*");
+  //   res.status(201).json(newBook[0]);
+  const { title, author, publishedDate } = req.body;
   try {
     const newBook = await pool("books")
       .insert({
         title,
         author,
-        genre,
-        description,
         published_date: publishedDate,
       })
       .returning("*");
