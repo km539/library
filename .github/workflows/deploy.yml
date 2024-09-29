@@ -21,6 +21,9 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+    - name: List files in current directory
+      run: ls -al  
+      
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
