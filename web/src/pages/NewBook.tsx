@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header.tsx";
 
 export const NewBook = () => {
+  const [bookInfo, setBookInfo] = useState({
+    title: "",
+    author: "",
+    published: null,
+  });
   return (
     <div style={{ height: "100dvh" }}>
       <Header />

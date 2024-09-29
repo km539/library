@@ -29,6 +29,17 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./node/DB:/docker-entrypoint-initdb.d
+  web:
+    container_name: front-end
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    volumes:
+      - ./web:/usr/src/app
+      - /usr/src/app/node_modules
+    tty: true
+    ports:
+      - "3000:3000"
 
 volumes:
   db_data:
