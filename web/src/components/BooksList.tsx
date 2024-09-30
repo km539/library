@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import booksjson from "../books.json";
 import "../styles/BookList.css";
+import { Table, Button } from "react-bootstrap";
 
 type bookType = {
   id: number;
@@ -42,7 +43,10 @@ function BooksList() {
         <p>
           <strong>Published Date:</strong> {book.published_date}
         </p>
-        <button onClick={() => setSelectedBook(null)}>Close</button>
+        <div>
+          <button onClick={() => setSelectedBook(null)}>Close</button>
+          <button>Rent</button>
+        </div>
       </div>
     </div>
   );
@@ -50,7 +54,8 @@ function BooksList() {
   return (
     <div>
       <h1>Book List</h1>
-      <table className="books">
+      <Table striped bordered hover>
+      {/* <table className="books"> */}
         <thead>
           <tr>
             <th>ID</th>
@@ -77,7 +82,8 @@ function BooksList() {
           ))}
         </tbody>
         {selectedBook && viewDetail(selectedBook)}
-      </table>
+      {/* </table> */}
+      </Table>
     </div>
   );
 }
