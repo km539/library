@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     container_name: express
     volumes:
-      - ./node:/usr/src/app
+      - node_data:/usr/src/app
       - /usr/src/app/node_modules
     tty: true
     ports:
@@ -36,7 +36,7 @@ services:
       context: ./web
       dockerfile: Dockerfile
     volumes:
-      - ./web:/usr/src/app
+      - web_data:/usr/src/app
       - /usr/src/app/node_modules
     tty: true
     ports:
@@ -44,3 +44,5 @@ services:
 
 volumes:
   db_data:
+  node_data:
+  web_data:
