@@ -25,13 +25,19 @@ export const NewBook = () => {
       }
 
       const data = await response.json();
-      window.alert("");
-    } catch (error) {
+      window.alert("本が追加されました。");
+      resetForm();
+    } catch (error: any) {
       console.error("Error:", error);
+      window.alert(`エラー : ${error.message}`);
     }
   };
 
   const years = Array.from({ length: 401 }, (_, i) => 1700 + i);
+
+  const resetForm = () => {
+    setBookInfo({ title: "", author: "", published: null });
+  };
 
   return (
     <div style={{ height: "100dvh" }}>
@@ -45,7 +51,8 @@ export const NewBook = () => {
               required
               type="text"
               name="title"
-              onChange={(e) => {
+              value={bookInfo.title}
+              onChange={e => {
                 setBookInfo({ ...bookInfo, title: e.target.value });
               }}
             />
@@ -54,18 +61,20 @@ export const NewBook = () => {
               required
               type="text"
               name="author"
-              onChange={(e) => {
+              value={bookInfo.author}
+              onChange={e => {
                 setBookInfo({ ...bookInfo, author: e.target.value });
               }}
             />
             <label htmlFor="publishedDate">発行日</label>
             {/* <input type="number" name="publishedDate" min={1700} max={2024} /> */}
             <select
-              onChange={(e) =>
+              value={bookInfo.published || ""}
+              onChange={e =>
                 setBookInfo({ ...bookInfo, published: Number(e.target.value) })
               }
             >
-              {years.map((year) => (
+              {years.map(year => (
                 <option key={year} value={year}>
                   {year}
                 </option>
@@ -73,7 +82,13 @@ export const NewBook = () => {
             </select>
             <div style={{ display: "flex", justifyContent: "space-around" }}>
               <button style={{ width: "auto" }}>追加</button>
-              <button style={{ width: "auto" }}>クリア</button>
+              <button
+                type="button"
+                style={{ width: "auto" }}
+                onClick={resetForm}
+              >
+                クリア
+              </button>
             </div>
           </div>
         </form>
