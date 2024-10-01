@@ -6,6 +6,7 @@ import Books from "./pages/Books.tsx";
 import Index from "./pages/Index.tsx";
 import Search from "./pages/Search.tsx";
 import { NewBook } from "./pages/NewBook.tsx";
+import Login from "./components/Login.tsx";
 import { News } from "./pages/News.tsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/add",
     element: <NewBook />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/news",

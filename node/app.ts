@@ -2,7 +2,8 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { pool } from "./DB/initDB";
-import Book from "./routes/Books";
+import bookRoutes from "./routes/Books";
+import authRoutes from "./routes/auth";
 dotenv.config();
 
 const app: Express = express();
@@ -22,5 +23,6 @@ app.get("/test", (req: Request, res: Response) => {
   res.json({ message: "Express + TypeScript Server" });
 });
 
-app.use("/api/books", Book);
+app.use("/api/books", bookRoutes);
+app.use("/api/auth", authRoutes);
 export default app;
